@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejercicios DOM</title>
+        <link rel="stylesheet" href="estilos.css" type="text/css">
+    </head>
+
+    <body>
+        <h1>Manipulando CSS</h1>
+        <div id="source">Utilizaremos este div para manipular los estilos desde el tag script de JavaScript.</div>
+        <div id="destination">Div destination</div>
+        <s id="swap_1">texto 1</s>
+        <s id="swap_2">texto 2</s>
+        <script>
+            var div = document.querySelector("div")
+            div.classList.add("square")
+            function togglearDiv() {div.classList.toggle('square')}
+            setInterval( togglearDiv, 1500)
+
+            //Manipulando texto
+            var source = document.getElementById('source').textContent
+            document.getElementById('destination').textContent=source
+
+            //Shufflé!
+            var swap_1 = document.getElementById('swap_1').textContent
+            var swap_2 = document.getElementById('swap_2').textContent
+            document.getElementById('swap_1').textContent = swap_2
+            document.getElementById('swap_2').textContent = swap_1
+        </script>
+    </body>
+</html>
